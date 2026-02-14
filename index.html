@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jian ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{
+    margin:0;
+    background:black;
+    font-family:'Poppins', sans-serif;
+    color:white;
+    overflow:hidden;
+    text-align:center;
+}
+
+/* Cards */
+.card{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.95);
+    color:#333;
+    box-shadow:0 15px 50px rgba(255,0,90,0.3);
+    min-height:50vh;
+    max-width:350px;
+    margin:20px auto;
+    transition:opacity 1s ease, transform 0.8s ease;
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    transform:scale(0.95);
+}
+.card.active{
+    display:flex;
+    opacity:1;
+    transform:scale(1);
+}
+
+/* Big heart background */
+.card::before{
+    content:"❤️";
+    position:absolute;
+    font-size:200px;
+    color:#ff4d6d;
+    opacity:0.1;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    background:#ff2e75;
+    color:white;
+    font-size:16px;
+    border-radius:30px;
+    cursor:pointer;
+}
+button:hover{
+    background:#ff5c9a;
+}
+
+p{
+    max-width:320px;
+    line-height:1.6;
+    font-size:18px;
+}
+
+input{
+    padding:10px;
+    border-radius:20px;
+    border:none;
+    text-align:center;
+    margin-top:15px;
+    width:200px;
+}
+
+img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:10px;
+    opacity:0;
+    animation:fadePic 2s forwards;
+}
+@keyframes fadePic{
+    to{opacity:1;}
+}
+
+/* Floating hearts, petals, sparkles */
+.heart, .petal, .sparkle{
+    position:fixed;
+    bottom:-20px;
+    opacity:0.8;
+    cursor:pointer;
+    font-size:18px;
+    animation:float 8s linear infinite;
+}
+.petal{color:#ffb6c1;}
+.sparkle{color:#fff8d0; font-size:14px;}
+
+@keyframes float{
+    0%{transform:translateY(0) rotate(0deg);}
+    50%{transform:translateY(-50vh) rotate(180deg);}
+    100%{transform:translateY(-110vh) rotate(360deg);}
+}
+
+/* Final explosion hearts */
+.explosion{
+    font-size:40px;
+    animation:boom 2.5s ease forwards;
+}
+@keyframes boom{
+    0%{transform:scale(0.5);opacity:0;}
+    50%{transform:scale(1.5);opacity:1;}
+    100%{transform:scale(1);opacity:0;}
+}
+
+.glow{
+    font-size:22px;
+    margin-top:15px;
+    color:#ff7eb9;
+    text-shadow:0 0 10px #ff2e75;
+}
+
+.photos{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+.photos img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #ff4d6d;
+}
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<!-- Cards -->
+<div class="card active" id="intro">
+<h1>For Jian 💕</h1>
+<p>A little Valentine story… made only for you.</p>
+<button id="startBtn">Begin Our Story 💕</button>
+</div>
+
+<div class="card" id="card1">
+<h2>The Beginning</h2>
+<p>
+Jian, from the first moment I noticed you,  
+something in me became certain.  
+Not rushed. Not forced.  
+Just certain.
+</p>
+<button class="nextBtn" data-next="card2">Next ❤️</button>
+</div>
+
+<div class="card" id="card2">
+<h2>The Truth</h2>
+<p>
+You are soft but strong.  
+Calm but powerful.  
+And every time I think about you,  
+I don’t just feel attraction…  
+I feel intention.
+</p>
+<button class="nextBtn" data-next="card3">Next ❤️</button>
+</div>
+
+<div class="card" id="card3">
+<h2>The Confession</h2>
+<p>
+This Valentine’s isn’t just about flowers.  
+It’s about me choosing you.  
+
+Sweetly.  
+Deeply.  
+Passionately.  
+And confidently.
+</p>
+<button class="nextBtn" data-next="card4">Next ❤️</button>
+</div>
+
+<div class="card" id="card4">
+<h2>My Intention</h2>
+<p>
+I don’t want temporary.  
+I don’t want halfway.  
+
+I want to court you properly.  
+To treat you gently.  
+To protect your heart.  
+To earn your trust.
+</p>
+<button class="nextBtn" data-next="card5">Final ❤️</button>
+</div>
+
+<div class="card" id="card5">
+<h2>For Jian 💍</h2>
+<p>
+So today, on Valentine’s…  
+
+I’m not just giving you words.  
+I’m giving you my intention.  
+
+Not to rush you.  
+Not to pressure you.  
+
+But to stand in front of you  
+with confidence and say—
+
+I choose you.  
+And I hope you’ll let me prove  
+that I’m worth choosing too.
+</p>
+<div class="photos">
+<img src="https://i.postimg.cc/mgjBdWVy/image1.jpg">
+<img src="https://i.postimg.cc/Bb725VkS/1771035981801.jpg">
+</div>
+<button class="nextBtn" data-next="unlockCard">Unlock Something Special 🔐</button>
+</div>
+
+<div class="card" id="unlockCard">
+<h2>One More Thing ❤️</h2>
+<p>Only you knows this…</p>
+<p>What do I call you?</p>
+
+<input type="password" id="password" placeholder="Enter Secret Code">
+<button id="unlockBtn">Unlock ❤️</button>
+</div>
+
+<div class="card" id="secretCard">
+<h2>For You</h2>
+<p>
+Whenever you feel it too…
+I’ll be right here. Still choosing you. 💕
+</p>
+<button class="nextBtn" data-next="finalCard">Continue</button>
+</div>
+
+<div class="card" id="finalCard">
+<p>
+No pressure.  
+No rush.  
+Just something real growing quietly.
+</p>
+<div id="explosionArea"></div>
+<div class="glow">Still choosing you. 💕</div>
+</div>
+
+<script>
+const startBtn = document.getElementById("startBtn");
+const music = document.getElementById("music");
+const unlockBtn = document.getElementById("unlockBtn");
+
+// Start story
+startBtn.addEventListener("click", ()=>{
+    music.play();
+    document.getElementById("intro").classList.remove("active");
+    document.getElementById("card1").classList.add("active");
+});
+
+// Next buttons
+document.querySelectorAll(".nextBtn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+        const current = btn.parentElement.id;
+        const next = btn.getAttribute("data-next");
+        document.getElementById(current).classList.remove("active");
+        document.getElementById(next).classList.add("active");
+        if(next==="finalCard") finalExplosion();
+    });
+});
+
+// Unlock secret
+unlockBtn.addEventListener("click", ()=>{
+    const val = document.getElementById("password").value.toLowerCase();
+    if(val==="ms.pufferface"){
+        document.getElementById("unlockCard").classList.remove("active");
+        document.getElementById("secretCard").classList.add("active");
+    }else{
+        alert("Wrong secret code,ms.pufferface. ❤️");
+    }
+});
+
+// Floating hearts + petals + sparkles
+setInterval(()=>{
+    const elements = [];
+    const heart = document.createElement("div");
+    heart.classList.add("heart"); heart.innerHTML="❤️"; elements.push(heart);
+
+    const petal = document.createElement("div");
+    petal.classList.add("petal"); petal.innerHTML="🌸"; elements.push(petal);
+
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle"); sparkle.innerHTML="✨"; elements.push(sparkle);
+
+    elements.forEach(el=>{
+        el.style.left = Math.random()*100+"vw";
+        el.style.fontSize = (12+Math.random()*20)+"px";
+        document.body.appendChild(el);
+        el.addEventListener("click", ()=>{ el.classList.add("explosion"); setTimeout(()=>el.remove(),1500); });
+        setTimeout(()=>el.remove(),8000);
+    });
+},700);
+
+// Final explosion hearts (longer, cinematic)
+function finalExplosion(){
+    const area = document.getElementById("explosionArea");
+    for(let i=0;i<25;i++){
+        const span = document.createElement("span");
+        span.classList.add("explosion");
+        span.innerHTML="💖";
+        span.style.animationDuration = (2 + Math.random()*1.5)+"s";
+        area.appendChild(span);
+        setTimeout(()=>span.remove(),2500);
+    }
+}
+</script>
+</body>
+</html>
